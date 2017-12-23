@@ -1,3 +1,29 @@
-<p>
-  sign-up works!
-</p>
+<!--SignUp form-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-login">
+              <h4>Create a new Account</h4>
+              
+              <input class="form-control input-sm chat-input" placeholder="email address">
+              <br>
+    
+              <input class="form-control input-sm chat-input" placeholder="user name">
+              <br>
+              <input type="{{type}}" id="userPassword" class="form-control input-sm chat-input" placeholder="password">
+              <br>
+              <input type="{{type}}" id="ConfuserPassword" class="form-control input-sm chat-input" placeholder="confirm password">
+    
+              <a (click)="toggleShow()" class="show-hide">show/hide</a>
+              <br>
+              <br>
+              <div class="wrapper">
+                <span class="group-btn">     
+                    <a routerLink="" class="btn btn-primary btn-md">Create Account<i class="fa fa-sign-in"></i></a>
+                </span>
+              </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
