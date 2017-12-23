@@ -1,21 +1,7 @@
-.links{
-    color: white;
-    padding: 0px 15px 0px 15px;
-    text-align: center;
-    font-size: 2 rem;
-}
 .show-hide{
     cursor: pointer;
 }
-.uname{
-    position: relative;
-    margin: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 15px;
-}
+
 .container {
     padding: 25px;
     position: relative;
