@@ -1,6 +1,6 @@
 # CloudDcs
 
-CloudDcs(Cloud Distributed Computing Suite) provides Linux applications as a service, in a distributed environment(like a private intranet)
+CloudDcs(Cloud Distributed Computing Suite) is a set of open source tools and services, integrated together to form 'Single Virtual System' from computers connected in a network for providing distributed computing services like higher multitasking, sharing and accessing of applications, distributed file systems, platform for multinode applications, remote access to connected nodes, file synchronization and many more.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0. [Electron] and [Bootstrap]
 
