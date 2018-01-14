@@ -1,4 +1,5 @@
 # CloudDcs
+(*Project in development, proper documentation will be provided soon for client, manager and worker nodes*)
 
 CloudDcs(Cloud Distributed Computing Suite) is a set of open source tools and services, integrated together to form 'Single Virtual System' from computers connected in a network for providing distributed computing services like higher multitasking, sharing and accessing of applications, distributed file systems, platform for multinode applications, remote access to connected nodes, file synchronization and many more.
 <h5 align="center">Base Architecture</h5>
