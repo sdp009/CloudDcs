@@ -9,10 +9,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  UserNm : string = "";
+  userNm: string = "";
   pass: string = "";
   type = "password";
   show = false;
+
+  mNode:string[] = ["pc1","pc2","pc3"];
+  mName:string;
+
+  getCredentials(){
+    console.log("userNm: "+ this.userNm);
+    console.log("Passwd: "+ this.pass);
+    console.log("Master Node:" + this.mName);
+    //    this.router.navigate(['./main']);
+  }
 
   toggleShow()
   {

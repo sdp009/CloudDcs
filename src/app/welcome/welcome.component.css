@@ -1,0 +1,38 @@
+div.customDiv{
+    margin: 10px;
+    padding: 10px;
+    opacity: 0.4;
+    height: 80vh;
+    border-radius: 15px;
+	background-color: #ffffff;
+    text-align: center;
+    overflow-y: auto;
+    box-shadow: 0 8px 12px 0 rgba(241, 68, 68, 0.2), 0 6px 20px 0 rgba(233, 2, 2, 0.19);
+}
+
+div.customDiv p , h1{
+    text-align: center;
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 0 0 3px rgb(248, 213, 213);
+}
+.uname{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    overflow-x: auto;
+}
+.links{
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    text-align: center;
+    font-size: 2 rem;
+}

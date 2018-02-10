@@ -7,25 +7,39 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    WelcomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       {
-        path: '',
-        component: LoginComponent
+        path: 'welcome',
+        component: WelcomeComponent,
+        children:[
+          { path: '', component: LoginComponent, outlet:'authenticate'},
+          { path: 'login', component: LoginComponent, outlet:'authenticate'},
+          { path: 'signup', component: SignUpComponent, outlet:'authenticate'}
+        ]        
       },
       {
-        path: 'signup',
-        component: SignUpComponent
+        path: 'dashboard',
+        component: DashboardComponent
+      },	
+      {
+         path: '',
+         redirectTo: '/welcome',
+         pathMatch: 'full'
       }
     ])
   ],

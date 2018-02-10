@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+#other folders
+/bulk-upload
+
 # dependencies
 /node_modules
 

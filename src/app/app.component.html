@@ -13,7 +13,7 @@
         <a class="nav-link" href="https://github.com/sdp009/">GitHub</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           About
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -31,33 +31,5 @@
   </div>
 </nav>
 <br>
-<div>
-  <div class="row">
-    <div class="col-md-4">
-      <div>
-          <nav class=" uname navbar navbar-dark bg-dark">
-              <div class = "container">
-                <div class="row">
-                  <div class="col-md-8">
-                    <h3><a class="links" routerLink="">Login</a></h3>
-                  </div>  
-                  <div class="col-md-4">
-                    <h3><a class="links" routerLink="/signup">SignUp</a></h3>
-                  </div>
-                </div>
-              </div>    
-          </nav>
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-    <div class="col-md-8">
-        <div class="customDiv">
-          <h1>Cloud Distributed Computing Suite</h1>
-          <p>Cloud Distributed Computing Suite provides linux application as service 
-            on host with Windows, Mac or any Linux distro, in a distributed environment
-            for most efficient utilization of hardware resources! 
-          </p>
-        </div>
-      </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
+

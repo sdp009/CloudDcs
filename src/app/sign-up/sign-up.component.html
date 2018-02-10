@@ -5,21 +5,25 @@
             <div class="form-login">
               <h4>Create a new Account</h4>
               
-              <input class="form-control input-sm chat-input" placeholder="email address">
+              <input class="form-control input-sm chat-input" placeholder="email address" (blur)="eMail = $event.target.value">
               <br>
     
-              <input class="form-control input-sm chat-input" placeholder="user name">
+              <input class="form-control input-sm chat-input" placeholder="user name" (blur)="userNm = $event.target.value">
               <br>
-              <input type="{{type}}" id="userPassword" class="form-control input-sm chat-input" placeholder="password">
+              <input type="{{type}}" id="userPassword" class="form-control input-sm chat-input" placeholder="password" (blur)="pass = $event.target.value">
               <br>
-              <input type="{{type}}" id="ConfuserPassword" class="form-control input-sm chat-input" placeholder="confirm password">
+              <input type="{{type}}" id="ConfuserPassword" class="form-control input-sm chat-input" placeholder="confirm password" (blur)="cpass = $event.target.value">
     
               <a (click)="toggleShow()" class="show-hide">show/hide</a>
               <br>
+              <label for="sel1">Select Master Node:</label>
+              <select class="form-control" id="sel1" (blur)="mName = $event.target.value">
+                <option *ngFor = "let item of mNode">{{item}}</option>
+              </select>
               <br>
               <div class="wrapper">
                 <span class="group-btn">     
-                    <a routerLink="" class="btn btn-primary btn-md">Create Account<i class="fa fa-sign-in"></i></a>
+                    <a routerLink="" class="btn btn-primary btn-md" (click)="getCredentials()">Create Account<i class="fa fa-sign-in"></i></a>
                 </span>
               </div>
             </div>

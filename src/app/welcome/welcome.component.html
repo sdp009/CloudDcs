@@ -1,0 +1,30 @@
+<div>
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+          <nav class=" uname navbar navbar-dark bg-dark">
+              <div class = "container">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h3><a class="links" [routerLink]="['/welcome', { outlets: { authenticate: ['login'] } }]" routerLinkActive="active">Login</a></h3>
+                  </div>  
+                  <div class="col-md-4">
+                    <h3><a class="links" [routerLink]="['/welcome', { outlets: { authenticate: ['signup'] } }]" routerLinkActive="active">SignUp</a></h3>
+                  </div>
+                </div>
+              </div>    
+          </nav>
+        <router-outlet name="authenticate"></router-outlet>
+      </div>
+    </div>
+    <div class="col-md-8">
+        <div class="customDiv">
+          <h1>Cloud Distributed Computing Suite</h1>
+          <p>Cloud Distributed Computing Suite provides linux application as service 
+            on host with Windows, Mac or any Linux distro, in a distributed environment
+            for most efficient utilization of hardware resources! 
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
