@@ -19,12 +19,12 @@
                       placeholder="Search" [(ngModel)]= "userQuery" (keyup)="autoSugg()"
                       style="font-size:16px;height:50px"/>
     </div>
-    <div *ngIf="titleApp?.length > 0" class="offset-sm-4 col-sm-8 offset-md-0 col-md-12">
+    <div *ngIf="titleApp" class="offset-sm-4 col-sm-8 offset-md-0 col-md-12">
       <ul class="list-group" style="font-size:15px;height:15px">
 
         <li class="list-group-item" *ngFor="let appNm of titleApp"
         style="background: rgb(238, 213, 213);  z-index: 10; 
-                                    text-align: center; cursor: pointer">{{appNm}}</li>
+                                    text-align: center; cursor: pointer">{{appNm._source.title}}</li>
       </ul>
     </div>
   </div>

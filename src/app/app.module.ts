@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchComponent } from './search/search.component';
 import { ApptoolsComponent } from './apptools/apptools.component';
 
+import { ElasticsearchService } from './elasticsearch.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { ApptoolsComponent } from './apptools/apptools.component';
       }
     ])
   ],
-  providers: [],
+  providers: [ElasticsearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
