@@ -1,6 +1,10 @@
 .show-hide{
     cursor: pointer;
-    color: blue;
+}
+
+.btnCursor {
+    color: white;
+    cursor: pointer;    
 }
 
 .container {

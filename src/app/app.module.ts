@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SearchComponent } from './search/search.component';
+import { ApptoolsComponent } from './apptools/apptools.component';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     SignUpComponent,
     WelcomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchComponent,
+    ApptoolsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       },
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        children:[
+          { path: '', component: SearchComponent, outlet:'searchpanel'},
+          { path: 'appopen', component: ApptoolsComponent, outlet:'searchpanel'}
+        ]   
       },	
       {
          path: '',
