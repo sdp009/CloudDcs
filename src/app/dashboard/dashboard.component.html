@@ -1,29 +1,44 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" style="margin:0; padding:10px; position: fixed">
-  <ul class="nav sidebar-nav">
-    <li class="sidebar-brand"><a href="">Dashboard</a></li>
-    <li><a [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" routerLinkActive="active">App1</a></li>
-    <li><a href="">About</a></li>
-    <li><a href="">Events</a> </li>
-    <li><a href="">Team</a></li>
+<div class="appList">
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="margin:0; padding:10px; position: fixed">
+    <ul class="nav sidebar-nav">
+      <li class="sidebar-brand"><a (click)="showBullets()">Dashboard</a></li>
+      <li><a (click)="hideBullets()" [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" routerLinkActive="active">App1</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Events</a> </li>
+      <li><a href="">Team</a></li>
+  
+      <li class="dropdown sidebar-brand">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">Recents<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li class="dropdown-header">Dropdown heading</li>
+          <li><a href="">Action</a></li>
+          <li><a href="">Another action</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-    <li class="dropdown sidebar-brand">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown">Recents<span class="caret"></span></a>
-      <ul class="dropdown-menu" role="menu">
-        <li class="dropdown-header">Dropdown heading</li>
-        <li><a href="">Action</a></li>
-        <li><a href="">Another action</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<div class="appResults">
+  <div class="overalldash" *ngIf="show" style="margin:0px; border:0px; padding: 0px">
+    <div class="funkyradio offset-sm-4 col-sm-8 offset-md-0 col-md-12" style="margin: 0">
+      <span class="funkyradio-primary">
+          <input type="radio" name="radio" id="radio2" checked/>
+          <label for="radio2" [routerLink]="['/dashboard', { outlets: { searchpanel: ['x11'] } }]" routerLinkActive="active">XWindow</label>
+      </span>
+      <span class="funkyradio-primary">
+          <input type="radio" name="radio" id="radio3" />
+          <label for="radio3" [routerLink]="['/dashboard', { outlets: { searchpanel: ['docker'] } }]" routerLinkActive="active">Docker</label>
+      </span>
+      <span class="funkyradio-primary">
+          <input type="radio" name="radio" id="radio4" />
+          <label for="radio4" [routerLink]="['/dashboard', { outlets: { searchpanel: ['vnc'] } }]" routerLinkActive="active">X11VNC</label>
+      </span>
+    </div>
+  </div>        
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-2" style="padding: 0px 0px 0px 0px; width: 500px"></div>
-      <div class="col-md-10">
-        <router-outlet name="searchpanel"></router-outlet>
-      </div>
-  </div>
+  <!--outlet-->
+  <router-outlet name="searchpanel"></router-outlet>
 </div>
 
 <!--right toolbox-->

@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ElasticsearchService } from '../elasticsearch.service';
-//var cors = require('cors');
-@Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
-})
 
-export class SearchComponent implements OnInit {
-  
+@Component({
+  selector: 'app-x11',
+  templateUrl: './x11.component.html',
+  styleUrls: ['./x11.component.css']
+})
+export class X11Component implements OnInit {
   userQuery : any;
   titleApp: string[];
   searchParams : any;
@@ -52,7 +50,6 @@ export class SearchComponent implements OnInit {
         console.log('Search Completed!');
       });  
   }
-
   ngOnInit() {
   }
 

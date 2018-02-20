@@ -1,0 +1,7 @@
+.resultObjects{
+    overflow-y: auto; 
+    background: whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid navy;
+  }
