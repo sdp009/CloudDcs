@@ -10,12 +10,18 @@ export class X11Component implements OnInit {
   userQuery : any;
   titleApp: string[];
   searchParams : any;
+  suggest: boolean;
 
   constructor(private es: ElasticsearchService) { 
     this.userQuery = '';
+    this.suggest = true;
   }
 
-  autoSugg(){
+  autoSugg(event){
+    if(event.keyCode === 13)
+      this.suggest = false;
+    else
+      this.suggest = true;
     var pageNum = 1/*request.params.page*/;
     var perPage = 5/*request.params.per_page*/;
     console.log("----Query:  "+ this.userQuery);
@@ -49,6 +55,13 @@ export class X11Component implements OnInit {
       }).then(() => {
         console.log('Search Completed!');
       });  
+  }
+
+  deepSearch(_query: string){
+    this.suggest = false;
+    console.log("Enter key pressed!!!");
+    this.userQuery = _query;
+    console.log("----Search..Query:  "+ this.userQuery);
   }
   ngOnInit() {
   }
