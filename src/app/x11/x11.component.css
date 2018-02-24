@@ -9,6 +9,10 @@
   margin: 10px auto;
   padding-bottom: 3px; 
 }
+.resultObjects p{
+  font-size: 14px;
+  background: -webkit-gradient(linear, center top, center bottom, from(rgba(255, 255, 255, 0.973)), to(rgba(204, 204, 204, 1)));
+}
 
 .listItem{
   background: -webkit-gradient(linear, center top, center bottom, from(rgba(255, 255, 255, 0.973)), to(rgba(204, 204, 204, 1)));
