@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +16,7 @@ import { VncComponent } from './vnc/vnc.component';
 
 import { ElasticsearchService } from './elasticsearch.service';
 import { DiscoverService } from './discover.service';
+import { XwinService } from './xwin.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { DiscoverService } from './discover.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       {
@@ -59,7 +62,7 @@ import { DiscoverService } from './discover.service';
       }
     ])
   ],
-  providers: [ElasticsearchService, DiscoverService],
+  providers: [ElasticsearchService, DiscoverService, XwinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

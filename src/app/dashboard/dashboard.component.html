@@ -2,7 +2,11 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" style="margin:0; padding:10px; position: fixed">
     <ul class="nav sidebar-nav">
       <li class="sidebar-brand"><a (click)="showBullets()">Dashboard</a></li>
-      <li><a (click)="hideBullets()" [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" routerLinkActive="active">App1</a></li>
+      <li *ngFor="let app of appList">
+        <a (click)="hideBullets(app.name)" 
+        [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" 
+        routerLinkActive="active">{{app.name}}</a>
+      </li>
       <li><a href="">About</a></li>
       <li><a href="">Events</a> </li>
       <li><a href="">Team</a></li>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { XwinService } from '../xwin.service';
 
 @Component({
   selector: 'app-apptools',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApptoolsComponent implements OnInit {
 
-  constructor() { }
+  currentApp: string;
+
+  constructor(private x11: XwinService) { 
+    this.currentApp = x11.currentApp;
+  }
 
   ngOnInit() {
   }

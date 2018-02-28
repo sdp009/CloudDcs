@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ElasticsearchService } from '../elasticsearch.service';
+import { XwinService } from '../xwin.service';
 
 @Component({
   selector: 'app-x11',
@@ -21,11 +23,25 @@ export class X11Component implements OnInit {
   appNm: string;
   appType: String;
 
-  constructor(private es: ElasticsearchService) { 
+  private appUrl = 'http://localhost:7009/';
+  data: any = {};
+  appId: number;
+
+  systemNm: string;
+  sysIp: string;
+  userNm: string;
+  userPasswd: string;
+
+  constructor(private es: ElasticsearchService, private x11: XwinService,
+    private http: HttpClient) { 
     this.userQuery = '';
     this.suggest = true;
     this.argReq = false;
     this.cmdArg = '';
+
+    this.sysIp = '192.168.1.102';
+    this.userNm = 'shaun';
+    this.userPasswd = '250331';
   }
 
   autoSugg(event){
@@ -155,10 +171,10 @@ export class X11Component implements OnInit {
     this.exec = appRes._source.exec;
     this.appType = new String(appRes._source.terminal);
 
-    if(typeof(this.appType) === "undefined"  || this.appType === "false")
+    if(this.appType != "true")
       this.appType = "GUI Application";
     else
-    this.appType = "Command Line App";  
+      this.appType = "Command Line App";  
     console.log("type: "+this.appType);
       
     if(this.exec.includes("%") || this.exec.indexOf("%")>0){
@@ -173,14 +189,52 @@ export class X11Component implements OnInit {
 
   //file chooser
   change(event:any) {
-    console.log(event.target.files.length);
+    console.log(event.target.files);
     this.cmdArg = ''; 
     for (var i = 0; i < event.target.files.length; i++) { 
       var file = event.target.files[i];
       //console.log(file.name);
       this.modifyExec += " " + file.name;
-      this.cmdArg += file.name + ", ";
+      this.cmdArg += " " + file.name + " ";
     }
+  }
+
+  argAppend(event : any){
+    this.modifyExec = this.exec.substring(0,this.exec.indexOf("%"));
+    this.modifyExec += event.target.value;
+  }
+
+  startApp(){
+    //this.x11.startApp(this.modifyExec);
+    let sendUrl;
+    console.log("before launching : appType: "+ this.appType);
+    if(this.appType != "Command Line App"){
+      if(this.argReq)
+        sendUrl = this.appUrl + this.modifyExec;
+      else
+        sendUrl = this.appUrl + this.exec;
+    }
+    else{
+      if(this.argReq)
+        sendUrl = this.appUrl+ "xterm -hold -e \"" + this.modifyExec + "\"";
+      else
+        sendUrl = this.appUrl+ "xterm -hold -e \"" + this.exec + "\"";
+    }
+    console.log("method called: execUrl = "+ sendUrl);
+    
+    //sending url
+    this.http.get(sendUrl).subscribe(data => {
+      console.log(data);
+    },
+    (err: HttpErrorResponse) => {
+      if (err.error instanceof Error) {
+        console.log("Client-side error occured.");
+      } else {
+        console.log("Data is sent, No res:Server-side error.");
+      }
+    });
+    this.x11.startApp({name: this.appNm, id: this.appId});
+    this.appId++;
   }
 
   ngOnInit() {
