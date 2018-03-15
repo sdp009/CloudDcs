@@ -27,7 +27,7 @@ export class XwinService {
         .then(xJS => {
           xJS.launchApp(this.sysIp, this.userNm, this.userPasswd, appExec)
     });*/
-    this.appsList.push(appNm);
+    this.appsList.unshift(appNm);
     console.log("From x11 service: " + this.appsList.length);
   } 
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
     //router: any;
-
+    router: Router;
+    
     userNm: string = "";
     pass: string = "";
     cpass: string;
@@ -15,7 +17,7 @@ export class SignUpComponent implements OnInit {
     type: string = "password";
     show: boolean = false;
   
-    mNode:string[] = ["pc1","pc2","pc3"];
+    mNode:string[] = ["xenon","nipun","admin"];
     mName:string;
   
     getCredentials(){
@@ -26,7 +28,12 @@ export class SignUpComponent implements OnInit {
       console.log("Passwd: "+ this.pass);
       console.log("email: "+ this.eMail);
       console.log("Master Node:" + this.mName);
-      //this.router.navigate(['./main']);      
+      //this.router.navigate(['./main']);
+      if(this.userNm!='undefined' && this.pass!='undefined')
+        this.router.navigateByUrl('/welcome');      
+      else
+          alert("Invalid credentials");  
+        
     }
 
   toggleShow()
@@ -40,7 +47,7 @@ export class SignUpComponent implements OnInit {
       }
   }
   
-  constructor() { }
+  constructor(_router: Router) { this.router = _router; }
 
   ngOnInit() {
   }

@@ -27,8 +27,8 @@
   *ngFor="let appRes of appInfo" (click)="launchApp(appRes)">
     <div class="row">
       <div class="col-md-1">
-          <img src="http://localhost:8980/{{appRes._source.icon}}" alt="Image not found" 
-          onerror="this.onerror=null;this.src='http://localhost:8980/kali-menu.png';" 
+          <img src="http://192.168.1.120:8980/{{appRes._source.icon}}" alt="Image not found" 
+          onerror="this.onerror=null;this.src='http://192.168.1.120:8980/kali-menu.png';" 
           style="max-height: 70px; max-width: 60px;"/>
       </div>
       <div class="col-md-11">

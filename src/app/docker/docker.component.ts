@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { XwinService } from '../xwin.service';
 
 @Component({
   selector: 'app-docker',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DockerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private x11: XwinService) { }
 
   ngOnInit() {
+  }
+
+  startApp(){
+    //this.x11.startApp({name: this.appNm, id: this.appId});
   }
 
 }

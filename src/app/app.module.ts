@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+//import { NgxElectronModule } from 'ngx-electron';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -28,7 +29,8 @@ import { XwinService } from './xwin.service';
     ApptoolsComponent,
     X11Component,
     DockerComponent,
-    VncComponent
+    VncComponent,
+    //NgxElectronModule
   ],
   imports: [
     BrowserModule,

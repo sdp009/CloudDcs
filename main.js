@@ -13,6 +13,14 @@ function createWindow () {
     win = null
   })
 }
+
+//ipc request for manager names and ip
+/*ipc.on(‘get-managers’, function(event, arg) {
+  console.log(arg);
+  //do child process or other data manipulation and name it manData
+  event.sender.send(‘managersData’, manData);
+});*/
+
 // Create window on electron intialization
 app.on('ready', createWindow)
 // Quit when all windows are closed.

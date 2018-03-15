@@ -4,12 +4,14 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "noImplicitAny": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowJs": true,
     "target": "es6",
     "typeRoots": [
+      "../typings/globals",
       "node_modules/@types"
     ],
     "lib": [

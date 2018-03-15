@@ -7,14 +7,19 @@
         [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" 
         routerLinkActive="active">{{app.name}}</a>
       </li>
-      <li><a href="">About</a></li>
-      <li><a href="">Events</a> </li>
-      <li><a href="">Team</a></li>
+      <li><a >About</a></li>
+      <li><a >Events</a> </li>
+      <li><a >Team</a></li>
   
       <li class="dropdown sidebar-brand">
         <a href="" class="dropdown-toggle" data-toggle="dropdown">Recents<span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
           <li class="dropdown-header">Dropdown heading</li>
+          <li *ngFor="let app of appList">
+            <a (click)="hideBullets(app.name)" 
+            [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" 
+            routerLinkActive="active">{{app.name}}</a>
+          </li>
           <li><a href="">Action</a></li>
           <li><a href="">Another action</a></li>
         </ul>
@@ -48,8 +53,8 @@
 <!--right toolbox-->
 <div class="sidenav">
     <div class="row">
-        <div class="col-md-5"><a href="">Sync</a></div>
-        <div class="ofset-md-2 col-md-3"><a href="">Refresh</a></div>
+        <div class="col-md-5"><a routerLink='/dashboard'>Sync</a></div>
+        <div class="ofset-md-2 col-md-3"><a routerLink='/welcome'>Logout</a></div>
     </div>
   </div>
        

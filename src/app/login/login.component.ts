@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
+import { DiscoverService } from '../discover.service';
 
 @Component({
   selector: 'app-login',
@@ -14,18 +15,27 @@ export class LoginComponent implements OnInit {
   show = false;
   router: Router;
 
-  mNode:string[] = ["pc1","pc2","pc3"];
+  mNode:string[] = ["xenon","nipun","admin"];
   mName:string;
+  mIp:string;
 
-  constructor(_router: Router) { this.router = _router; }
+  constructor(_router: Router, private discov: DiscoverService) { this.router = _router; }
 
 
   getCredentials(){
     console.log("userNm: "+ this.userNm);
+    this.discov.userNm = this.userNm;
     console.log("Passwd: "+ this.pass);
+    this.discov.userPasswd = this.pass;
     console.log("Master Node:" + this.mName);
+    this.discov.systemNm = this.mName;
+
     //    check credentials and route
-    this.router.navigateByUrl('/dashboard');
+    if(this.userNm === 'shaun' && this.pass === '250331'){
+      this.router.navigateByUrl('/dashboard');      
+    }  
+    else
+      alert("Invalid credentials");
   }
 
   toggleShow()

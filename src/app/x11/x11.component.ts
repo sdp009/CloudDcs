@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ElasticsearchService } from '../elasticsearch.service';
 import { XwinService } from '../xwin.service';
+import { DiscoverService } from '../discover.service';
 
 @Component({
   selector: 'app-x11',
@@ -33,15 +34,15 @@ export class X11Component implements OnInit {
   userPasswd: string;
 
   constructor(private es: ElasticsearchService, private x11: XwinService,
-    private http: HttpClient) { 
+    private http: HttpClient, private discov: DiscoverService) { 
     this.userQuery = '';
     this.suggest = true;
     this.argReq = false;
     this.cmdArg = '';
 
-    this.sysIp = '192.168.1.102';
-    this.userNm = 'shaun';
-    this.userPasswd = '250331';
+    this.sysIp = discov.sysIp;
+    this.userNm = discov.userNm;
+    this.userPasswd = discov.userPasswd;
   }
 
   autoSugg(event){

@@ -4,8 +4,8 @@
         <div class="col-md-12">
             <div class="form-login">
               <h4>Create a new Account</h4>
-              
-              <input class="form-control input-sm chat-input" placeholder="email address" (blur)="eMail = $event.target.value">
+              <input type="email" class="form-control input-sm chat-input" placeholder="email"
+              name="email" ngModel [email]="true" (blur)="eMail = $event.target.value">
               <br>
     
               <input class="form-control input-sm chat-input" placeholder="user name" (blur)="userNm = $event.target.value">
@@ -23,7 +23,7 @@
               <br>
               <div class="wrapper">
                 <span class="group-btn">     
-                    <a routerLink="" class="btn btn-primary btn-md" (click)="getCredentials()">Create Account<i class="fa fa-sign-in"></i></a>
+                    <a class="btn btn-primary btn-md" (click)="getCredentials()">Create Account<i class="fa fa-sign-in"></i></a>
                 </span>
               </div>
             </div>

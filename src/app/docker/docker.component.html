@@ -1,3 +1,146 @@
-<p>
-  docker works!
-</p>
+<div class="container" style="margin-top: 7px">
+    <!--objects-->
+    <div class="col-md-11 resultObjects" data-toggle="modal" data-target="#myModal">
+      <div class="row">
+        <div class="col-md-1">
+            <img src="./assets/images/docker.png" alt="Image not found" 
+            onerror="this.onerror=null;this.src='http://192.168.1.120:8980/kali-menu.png';" 
+            style="max-height: 80px; max-width: 70px;"/>
+        </div>
+        <div class="col-md-11">
+          <div class="row">
+            <div class="col-md-12"><label style="font-size: 25px;">Portainer</label>
+              <span>:  Docker and Docker Swarm admin tools</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12" style="overflow-y: auto; height: 55px; margin-bottom:5px;"><p>
+                Portainer gives you access to a central overview of your Docker host or Swarm cluster.
+                 From the dashboard, you can easily access any manageable entity.
+            </p></div>
+            <div class="col-md-8"><h6>Avalability:</h6></div>
+            <div class="col-md-4"><h6>Likes: 2</h6></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--objects-close-->
+    
+    <!--objects-->
+    <div class="col-md-11 resultObjects" data-toggle="modal" data-target="#myModal">
+        <div class="row">
+          <div class="col-md-1">
+              <img src="./assets/images/docker.png" alt="Image not found" 
+              onerror="this.onerror=null;this.src='http://192.168.1.120:8980/kali-menu.png';" 
+              style="max-height: 80px; max-width: 70px;"/>
+          </div>
+          <div class="col-md-11">
+            <div class="row">
+              <div class="col-md-12"><label style="font-size: 25px;">Nginx</label>
+                <span>:  Light-weight webserver</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" style="overflow-y: auto; height: 55px; margin-bottom:5px;"><p>
+                  Nginx is a web server which can also be used as a reverse proxy,
+                  load balancer and HTTP cache.
+              </p></div>
+              <div class="col-md-8"><h6>Avalability:</h6></div>
+              <div class="col-md-4"><h6>Likes: 2</h6></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--objects-close-->
+
+    <!--objects-->
+    <div class="col-md-11 resultObjects" data-toggle="modal" data-target="#myModal">
+        <div class="row">
+          <div class="col-md-1">
+              <img src="./assets/images/docker.png" alt="Image not found" 
+              onerror="this.onerror=null;this.src='http://192.168.1.120:8980/kali-menu.png';" 
+              style="max-height: 80px; max-width: 70px;"/>
+          </div>
+          <div class="col-md-11">
+            <div class="row">
+              <div class="col-md-12"><label style="font-size: 25px;">MongoDB</label>
+                <span>:  Document based NoSQL</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" style="overflow-y: auto; height: 55px; margin-bottom:5px;"><p>
+                  MongoDB is a free and open-source cross-platform document-oriented database program. 
+                  Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas.
+              </p></div>
+              <div class="col-md-8"><h6>Avalability:</h6></div>
+              <div class="col-md-4"><h6>Likes: 2</h6></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--objects-close-->  
+
+    <!--objects-->
+    <div class="col-md-11 resultObjects" data-toggle="modal" data-target="#myModal">
+        <div class="row">
+          <div class="col-md-1">
+              <img src="./assets/images/docker.png" alt="Image not found" 
+              onerror="this.onerror=null;this.src='http://192.168.1.120:8980/kali-menu.png';" 
+              style="max-height: 80px; max-width: 70px;"/>
+          </div>
+          <div class="col-md-11">
+            <div class="row">
+              <div class="col-md-12"><label style="font-size: 25px;">Apache Hadoop</label>
+                <span>:  Distributed computing tool</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" style="overflow-y: auto; height: 55px; margin-bottom:5px;"><p>
+                  Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers
+                   to solve problems involving massive amounts of data and computation.
+              </p></div>
+              <div class="col-md-8"><h6>Avalability:</h6></div>
+              <div class="col-md-4"><h6>Likes: 2</h6></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--objects-close-->    
+  </div>  
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">App properties</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <label>Volumes: </label>
+          <input type="text"  placeholder="docker vloumes for mount" 
+          class="form-control input-sm">
+
+          <label>Ports: </label>
+          <input type="text"  placeholder="For mapping docker ports" 
+          class="form-control input-sm">
+          <div><br>
+            <label>Arguments: </label>
+            <input type="text"  placeholder="Optional"  
+            class="form-control input-sm" >
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+           (click)="startApp()">
+          Launch</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
