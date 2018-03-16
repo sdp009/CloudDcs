@@ -7,21 +7,21 @@
         [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" 
         routerLinkActive="active">{{app.name}}</a>
       </li>
-      <li><a >About</a></li>
-      <li><a >Events</a> </li>
-      <li><a >Team</a></li>
+      <li><a href="http://192.168.1.150:5601/app/kibana#/home?_g=()" target="_blank">Kibana</a></li>
+      <li><a href="http://localhost:9000" target="_blank">Portainer</a> </li>
+      <li><a href="https://github.com/sdp009" target="_blank">Team</a></li>
   
       <li class="dropdown sidebar-brand">
-        <a href="" class="dropdown-toggle" data-toggle="dropdown">Recents<span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Recents<span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
           <li class="dropdown-header">Dropdown heading</li>
-          <li *ngFor="let app of appList">
+          <li class="dropdown-item" *ngFor="let app of appList">
             <a (click)="hideBullets(app.name)" 
             [routerLink]="['/dashboard', { outlets: { searchpanel: ['appopen'] } }]" 
             routerLinkActive="active">{{app.name}}</a>
           </li>
-          <li><a href="">Action</a></li>
-          <li><a href="">Another action</a></li>
+          <li class="dropdown-item"><a >Action</a></li>
+          <li class="dropdown-item"><a >Another action</a></li>
         </ul>
       </li>
     </ul>

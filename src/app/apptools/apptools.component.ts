@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { XwinService } from '../xwin.service';
+import { ElasticsearchService } from '../elasticsearch.service';
 
 @Component({
   selector: 'app-apptools',
@@ -10,8 +11,16 @@ export class ApptoolsComponent implements OnInit {
 
   currentApp: string;
 
-  constructor(private x11: XwinService) { 
+  exec: string;
+  modifyExec: string;
+  argReq: boolean;
+  cmdArg: string;
+  appNm: string;
+  appType: String;
+
+  constructor(private x11: XwinService, private es: ElasticsearchService) { 
     this.currentApp = x11.currentApp;
+
   }
 
   ngOnInit() {

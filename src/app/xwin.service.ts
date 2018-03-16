@@ -13,6 +13,7 @@ export class XwinService {
   userNm: string;
   userPasswd: string;
   appsList = [];
+  
   currentApp: string;
 
   constructor() { 
