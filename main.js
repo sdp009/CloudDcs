@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 let win;
 function createWindow () {
   // Create the browser window.
@@ -22,7 +22,26 @@ function createWindow () {
 });*/
 
 // Create window on electron intialization
-app.on('ready', createWindow)
+app.on('ready', ()=>{
+  createWindow();
+
+  //ipc
+  ipcMain.on('async', (event, arg) => {  
+    // Print 1
+    console.log("MAin Proc: "+ arg);
+    // Reply on async message from renderer process
+    event.sender.send('async-reply', 2);
+  });
+
+  ipcMain.on('sync', (event, arg) => {  
+    // Print 3
+    console.log("Sync msg: " + arg);
+    // Send value synchronously back to renderer process
+    event.returnValue = 4;
+  });
+
+})
+
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
   // On macOS specific close process

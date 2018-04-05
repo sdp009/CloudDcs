@@ -18,6 +18,7 @@ import { VncComponent } from './vnc/vnc.component';
 import { ElasticsearchService } from './elasticsearch.service';
 import { DiscoverService } from './discover.service';
 import { XwinService } from './xwin.service';
+import { IpcService } from './ipc.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { XwinService } from './xwin.service';
       }
     ])
   ],
-  providers: [ElasticsearchService, DiscoverService, XwinService],
+  providers: [ElasticsearchService, DiscoverService, XwinService, IpcService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
